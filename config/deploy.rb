@@ -21,7 +21,8 @@ set :deploy_to, "/home/deploy/rebookery"
 set :pty, true
 
 # Default value for :linked_files is []
-# append :linked_files, "config/database.yml", "config/application.yml"
+append :linked_files, "config/database.yml", "config/application.yml", "db/production.sqlite3"
+
 # Default value for linked_dirs is []
 # append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
 append :linked_dirs, "bin", "log" "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle", "public/system", "public/uploads"
@@ -33,13 +34,9 @@ append :linked_dirs, "bin", "log" "tmp/pids", "tmp/cache", "tmp/sockets", "vendo
 # set :keep_releases, 5
 
 set :rbenv_type, :user # or :system, depends on your rbenv setup
-set :rbenv_ruby, '2.3.3'
-
-# in case you want to set ruby version from the file:
-# set :rbenv_ruby, File.read('.ruby-version').strip
-
+set :rbenv_ruby, File.read('.ruby-version').strip
 set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
-set :rbenv_map_bins, %w{rake gem bundle ruby rails}
+set :rbenv_map_bins, %w{rake gem bundle ruby rails puma pumactl}
 set :rbenv_roles, :all # default value
 
 set :puma_rackup, -> { File.join(current_path, 'config.ru') }
@@ -55,7 +52,7 @@ set :puma_threads, [0, 8]
 set :puma_workers, 0
 set :puma_worker_timeout, nil
 set :puma_init_active_record, true
-set :puma_preload_app, false
+set :puma_preload_app, true
 
 # Server name for nginx, space separated values
 # No default value
