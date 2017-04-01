@@ -1,0 +1,42 @@
+<header class="page-header">
+  <!-- RD Navbar-->
+  <div class="rd-navbar-wrap">
+    <nav data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-static" data-md-layout="rd-navbar-static" data-lg-layout="rd-navbar-static" data-md-device-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-static" class="rd-navbar rd-navbar-bordered">
+      <div class="rd-navbar-inner">
+        <!-- RD Navbar Panel-->
+        <div class="rd-navbar-panel">
+          <!-- RD Navbar Toggle-->
+          <div class="rd-navbar-toggle-outer">
+            <button data-rd-navbar-toggle=".rd-navbar-nav-wrap, .rd-navbar-toggle-outer" class="rd-navbar-toggle"><span></span></button>
+          </div>
+          <!-- RD Navbar Brand-->
+          <div class="rd-navbar-brand"><a href="./"><span class="icon fl-continuous-house150"></span><span class="brand-name">real<span class='text-primary'>estate</span></span></a></div>
+        </div>
+        <div class="rd-navbar-nav-wrap">
+          <!-- RD Navbar Nav-->
+          <ul class="rd-navbar-nav">
+            <li class="active"><a href="./">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="#">Portfolio</a>
+              <!-- RD Navbar Dropdown-->
+              <ul class="rd-navbar-dropdown">
+                <li><a href="portfolio_masonry.html">Masonry style</a></li>
+                <li><a href="portfolio_grid.html">Grid style</a></li>
+                <li><a href="portfolio_justified.html">Justified style</a></li>
+                <li><a href="portfolio_list.html">List style</a></li>
+              </ul>
+            </li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contacts.html">Contacts</a></li>
+            <% if user_signed_in? %>
+            <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
+            <% else %>
+            <li><%= link_to 'Log in', new_user_session_path %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>

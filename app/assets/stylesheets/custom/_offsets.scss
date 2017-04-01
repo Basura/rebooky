@@ -1,0 +1,119 @@
+//
+// Offsets
+// --------------------------------------------------
+
+$medias: (0: null, $screen-xs-min : xs, $screen-sm-min : sm, $screen-md-min : md, $screen-lg-min : lg, $screen-xl-min : xl);
+
+// Insets
+// -------------------------
+
+$insets: (0, 10px);
+
+@include indent-responsive(inset, left, padding-left, $medias, $insets);
+@include indent-responsive(inset, right, padding-right, $medias, $insets);
+
+.inset-md-right-14p{
+  @media (min-width: $screen-md-min) {
+    padding-right: 14%;
+  }
+}
+
+
+// Elements
+// -------------------------
+
+html{
+  *{
+    &:first-child{
+      margin-top: 0;
+    }
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+}
+
+.icon-xl + *{
+  margin-top: 26px;
+
+  @media (min-width: $screen-lg-min) {
+    margin-top: 40px;
+  }
+}
+
+img + h6,
+img + h4,
+img + p{
+  margin-top: 17px;
+
+  @media (min-width: $screen-sm-min) {
+    margin-top: 37px;
+  }
+}
+
+h4 + p{
+  margin-top: 11px;
+}
+
+h6 + p{
+  margin-top: 13px;
+}
+
+.range + .btn,
+p + .btn{
+  margin-top: 18px;
+  @media (min-width: $screen-md-min) {
+    margin-top: 38px;
+  }
+}
+
+.icon + h1{
+  margin-top: 0.68em;
+}
+.heading-divider + .post-blog{
+  margin-top: 60px;
+}
+
+h1 + p{
+  margin-top: 1.7em;
+}
+
+p + .btn-lg{
+  margin-top: 3em;
+}
+
+.page-footer{
+  .heading-divider{
+      margin-bottom: 1.28em;
+  }
+
+  a + a{
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: $screen-md-min) {
+  .page-footer{
+    .heading-divider{
+      margin-bottom: 1.78em;
+    }
+  }
+}
+
+
+// Grid
+// -------------------------
+
+
+// Sections
+// -------------------------
+
+
+// Responsive
+// -------------------------
+
+$offsets: (0, 4px, 34px, 10px, 50px, 70px, 80px);
+
+html .page{
+  @include indent-responsive(offset, top, margin-top, $medias, $offsets);
+}

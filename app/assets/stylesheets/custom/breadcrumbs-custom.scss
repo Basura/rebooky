@@ -1,0 +1,27 @@
+//
+// Breadcrumb custom
+// --------------------------------------------------
+
+.breadcrumb{
+  position: relative;
+  background-color: transparent;
+  padding: 0;
+  font-size: 22px;
+  font-weight: 300;
+
+  a{
+    color: $white;
+  }
+  
+  li{
+    &.active{
+      color: $brand-primary;
+    }
+    
+    & + li{
+      &:before{
+        color: $white;
+      }
+    }
+  }
+}

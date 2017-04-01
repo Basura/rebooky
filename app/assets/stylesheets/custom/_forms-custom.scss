@@ -1,0 +1,20 @@
+//
+// Forms custom
+// --------------------------------------------------
+
+.form-control{
+  height: 52px;
+  padding: 12px 19px;
+  color: $gray-base;
+
+  @include placeholder($gray-base);
+
+  &:focus{
+    box-shadow: none;
+    border-color: inherit;
+  }
+}
+
+textarea{
+  resize: none
+}

@@ -1,0 +1,243 @@
+//
+// Custom Thumbnails
+// --------------------------------------------------
+
+.caption{
+  a{
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+}
+
+.thumbnail{
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  position: relative;
+
+
+  .caption{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    vertical-align: middle;
+    box-shadow: 0 0 1px transparent;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+
+    &,
+    a{
+      color: #fff;
+    }
+
+
+    .icon + *{
+      margin-top: 20px;
+    }
+    h5 + P{
+      margin-top: 16px;
+    }
+
+    .auxiliary{
+      display: inline-block;
+      vertical-align: middle;
+      width: 0;
+      height: 100%;
+    }
+
+    .caption-inner{
+      display: inline-block;
+      vertical-align: middle;
+      padding: 15px 22%;
+      opacity: 0;
+      -webkit-transition: all 0.4s ease;
+      -o-transition: all 0.4s ease;
+      transition: all 0.4s ease;
+    }
+  }
+
+  &:hover{
+    .caption-inner{
+      opacity: 1;
+    }
+    .caption{
+      bottom: 0;
+      background-color: #f6c452;
+      color: white;
+    }
+  }
+
+  img{
+    min-width: 100%;
+
+    object-fit: cover;
+    min-height: 322px;
+    max-height: 322px;
+  }
+}
+
+@media (min-width: $screen-lg-min) {
+  .thumbnail {
+      img {
+        max-height: none;
+      }
+  }
+}
+
+.thumbnail-variant-1{
+  position: relative;
+
+  img,
+  &{
+    min-height: 230px;
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+  }
+
+  .caption{
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(255,255,255,.4);
+
+    padding-left: 10px;
+    padding-right: 10px;
+
+    @include display-flex();
+    @include justify-content(center);
+    @include align-items(center);
+    @include flex-direction(column);
+
+    visibility: hidden;
+    opacity: 0;
+    transition: .3s ease-out;
+
+    a,
+    &{
+      color: $white;
+    }
+    
+    a:hover{
+      color: $brand-primary;
+    }
+
+    p{
+      margin-top: 12px;
+    }
+  }
+
+  &:hover{
+    .caption{
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  &-dark{
+    .caption {
+      background-color: rgba(0,0,0,.4);
+
+      hr{
+        max-width: 370px;
+        width: 100%;
+        border-color: rgba(255,255,255, .3);
+        margin-top: 40px;
+        margin-bottom: 40px;
+      }
+    }
+  }
+}
+
+.thumbnail-variant-2{
+  position: relative;
+
+  img{
+    width: 100%;
+  }
+  
+  .caption{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $brand-primary;
+
+    padding: 2.5% 10%;
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s ease-out;
+    transform: translateY(10%);
+
+
+    &:before{
+      position: absolute;
+      top: -15px;
+      left: calc(50% - 15px);
+      content: '';
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 15px 15px 15px;
+      border-color: transparent transparent $brand-primary transparent;
+    }
+
+    a,
+    &{
+      color: white;
+    }
+  }
+
+  &:hover{
+    .caption{
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+html body .thumbnail-variant-3{
+  display: block;
+
+  img {
+    transition: .3s;
+  }
+    &:hover{
+    img{
+      opacity: 0.8;
+    }
+  }
+}
+
+.img-thumbnail,
+.thumbnail{
+  box-shadow: none;
+}
+
+// Make thumbnails to fit entire container width
+.thumbnail-block {
+  display: block;
+
+  > img,
+  a > img {
+    width: 100%;
+    height: auto;
+  }
+}

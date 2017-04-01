@@ -1,0 +1,148 @@
+//
+// Custom Buttons Styles
+// --------------------------------------------------
+
+// Base styles
+// --------------------------------------------------
+
+.btn {
+  transition: .3s ease-out;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 300;
+
+
+  &:focus,
+  &:active,
+  &:active:focus{
+    outline: none;
+  }
+
+
+  &,
+  &:active,
+  &.active {
+    &:focus,
+    &.focus {
+
+    }
+  }
+
+  &:hover,
+  &:focus,
+  &.focus {
+
+  }
+
+  &:active,
+  &.active {
+    @include box-shadow(none);
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+
+  }
+
+
+  .icon{
+    vertical-align: middle;
+    font-size: 22px;
+    margin-left: 25px;
+
+    @media (min-width: $screen-sm-min) {
+      margin-left: 85px;
+    }
+  }
+}
+
+
+// Alternate buttons
+// --------------------------------------------------
+
+.btn-default {
+  @include button-variant-custom($gray-dark, $white, $white, $white, transparent, $white);
+}
+
+.btn-primary {
+  @include button-variant-custom($white, $brand-primary, $brand-primary, $white, darken(desaturate(adjust_hue($brand-primary, -11.086956521739125), 3.167452913843867%), 6.862745098039227%), darken(desaturate(adjust_hue($brand-primary, -11.086956521739125), 3.167452913843867%), 6.862745098039227%));
+}
+
+// Success appears as green
+.btn-success {
+
+}
+
+// Info appears as blue-green
+.btn-info {
+
+}
+
+// Warning appears as orange
+.btn-warning {
+
+}
+
+// Danger and error appear as red
+.btn-danger {
+
+}
+
+
+// Button Sizes
+// --------------------------------------------------
+
+.btn-xs {
+
+}
+
+.btn-sm {
+
+}
+
+.btn-lg {
+  @include button-size($padding-large-vertical, $padding-large-horizontal, 14px, $line-height-large, $btn-border-radius-large);
+}
+
+
+// Button Shapes
+// --------------------------------------------------
+
+.btn-rect {
+  border-radius: 0;
+}
+
+
+// Button Icon styles
+// --------------------------------------------------
+
+.btn{
+
+  &.btn-icon {
+    padding-left: 17px;
+    padding-right: 17px;
+
+    .icon {
+      font-size: 28px;
+      line-height: 28px;
+      vertical-align: middle;
+      transition: 0s;
+    }
+
+    &-left{
+      .icon{
+        float: left;
+        padding-right: 10px;
+      }
+    }
+
+    &-right{
+      .icon{
+        float: right;
+        padding-left: 10px;
+      }
+    }
+
+  }
+}

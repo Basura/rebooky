@@ -1,0 +1,33 @@
+//
+// Pagination custom
+// --------------------------------------------------
+
+.pagination-custom{
+  font-size: 20px;
+  font-weight: 500;
+
+  a{
+    color: inherit;
+    transition: .3s;
+  }
+
+  .active{
+    color: $brand-primary;
+  }
+
+  li{
+    display: inline-block;
+  }
+
+  li + li{
+    margin-left: 10px;
+    @media (min-width: $screen-md-min) {
+      margin-left: 20px;
+    }
+  }
+
+  a:hover{
+    text-decoration: none;
+    color: $brand-primary;
+  }
+}

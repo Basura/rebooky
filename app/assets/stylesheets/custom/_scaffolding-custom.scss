@@ -1,0 +1,45 @@
+//
+// Custom scaffolding
+// --------------------------------------------------
+
+
+// Body reset
+// -------------------------
+
+body {
+  font-size: 16px;
+
+  @media (min-width: $screen-sm-min) {
+    font-size: $font-size-base;
+  }
+}
+
+cite{
+  font-style: normal;
+
+  &:before{
+    content: '\f10d';
+    font-family: FontAwesome;
+    font-size: 10px;
+    vertical-align: top;
+    position: relative;
+    top: 2px;
+    margin-right: 10px;
+  }
+}
+
+q{
+  &:before,
+  &:after{
+    content: none;
+  }
+}
+
+// Links
+
+a {
+  &:focus{
+    outline: none;
+    text-decoration: none;
+  }
+}

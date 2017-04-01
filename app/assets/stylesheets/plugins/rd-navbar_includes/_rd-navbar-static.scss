@@ -1,0 +1,274 @@
+/*
+* Static Layout
+*/
+
+$navbar-static-nav-indent: 36px;
+
+$navbar-static-nav-color: $navbar-nav-color;
+$navbar-static-nav-background: $navbar-nav-background;
+$navbar-static-nav-hover-color: $navbar-nav-hover-color;
+$navbar-static-nav-hover-background: $navbar-nav-hover-background;
+$navbar-static-nav-active-color: $navbar-nav-active-color;
+$navbar-static-nav-active-background: $navbar-nav-active-background;
+
+
+.rd-navbar-static {
+  display: block;
+
+  .rd-navbar-brand{
+    display: inline-block;
+    height: 150px;
+    padding: 38px 70px 36px 56px;
+
+    a:hover{
+      text-decoration: none;
+    }
+  }
+
+
+  &.rd-navbar-bordered{
+    .rd-navbar-toggle-outer,
+    .rd-navbar-brand{
+      border-bottom: 1px solid #fff;
+    }
+  }
+
+  .rd-navbar-panel-canvas{
+    position: fixed;
+    height: 56px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: $white;
+    z-index: 16;
+  }
+
+  .rd-navbar-toggle-outer{
+    height: 150px;
+    width: 177px;
+    position: absolute;
+    right: 0;
+    z-index: 5;
+    transition: .3s ease-out;
+    transition-delay: .25s;
+
+    &.active{
+      transition-delay: .0s;
+
+      border-color: transparent;
+    }
+  }
+
+  .rd-navbar-toggle{
+    display: block;
+    background: white;
+    z-index: 17;
+
+    position: absolute;
+    top: 41px;
+    left: 49px;
+  }
+
+  .rd-navbar-nav-wrap{
+    &.active{
+      .rd-navbar-nav {
+        transform: translateX(0px);
+      }
+    }
+  }
+  .rd-navbar-nav{
+    text-align: left;
+    position: fixed;
+    background-color: $gray-dark;
+    bottom: 0;
+    right: 0;
+    top: 0;
+
+    padding-top: 130px;
+    padding-left: 37px;
+    transform: translateX(344px);
+    width: 344px;
+    z-index: 4;
+
+
+    .rd-navbar-dropdown{
+      border-radius: 30px;
+      overflow: hidden;
+    }
+
+    > .rd-navbar-submenu {
+      > ul {
+        box-shadow: $navbar-shadow;
+      }
+
+      li {
+        font-size: 14px;
+        line-height: 30px;
+      }
+
+      > .rd-navbar-dropdown, > .rd-navbar-megamenu {
+        opacity: 0;
+        visibility: hidden;
+        @include transform(translateY(30px));
+      }
+
+      &.focus {
+        > .rd-navbar-dropdown, > .rd-navbar-megamenu {
+          opacity: 1;
+          visibility: visible;
+          @include transform(translateY(0));
+        }
+      }
+
+      .rd-navbar-submenu.focus > .rd-navbar-dropdown {
+        display: block;
+      }
+    }
+
+    li{
+      display: block;
+      padding-left: 0;
+
+      &.active{
+        > a{
+          background-color: $brand-primary;
+          color: $gray-dark;
+          border-radius: 50px;
+        }
+      }
+
+      & + li{
+        margin-top: 6px;
+      }
+    }
+  }
+
+
+  // RD Navbar States
+  .rd-navbar-static--visible{
+    display: block;
+  }
+
+  .rd-navbar-static--hidden{
+    display: none;
+  }
+
+  &.rd-navbar--is-stuck{
+
+    .rd-navbar-nav{
+      position: static;
+      transform: none;
+      padding: 0;
+      width: auto;
+      background-color: transparent;
+      margin-bottom: 0;
+
+      > li {
+        
+        > a{
+          padding: 3px 11px;
+
+          @media (min-width: $screen-md-min) {
+            padding: 8px 20px;
+          }
+
+          &:hover{
+            text-decoration: none;
+          }
+        }
+        
+        &.active{
+          > a{
+            color: inherit;
+          }
+        }
+        display: inline-block;
+        & + li{
+          margin-top: 0;
+
+          margin-left: 3px;
+
+          @media (min-width: $screen-md-min) {
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+
+
+    .rd-navbar-toggle-outer{
+      display: none; 
+    }
+
+    .rd-navbar-nav-wrap {
+      width: 100%;
+      text-align: right;
+    }
+    .rd-navbar-panel {
+      padding: 12px 0;
+
+      .rd-navbar-brand{
+        height: auto;
+        padding: 0;
+        .icon{
+          color: $brand-primary;
+          font-size: 40px;
+        }
+
+        .brand-name{
+          color: $gray-dark;
+          font-size: 22px;
+          margin-left: 24px;
+        }
+      }
+    }
+
+    .rd-navbar-brand{
+      display: table-cell;
+      vertical-align: middle;
+
+      > *{
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      > img{
+        margin-right: 10px;
+      }
+
+      > a{
+        font-size: 36px;
+        line-height: 48px;
+      }
+    }
+
+    .rd-navbar-collapse{
+      display: block;
+      float: right;
+      margin-left: -15px;
+      margin-top: 23px;
+
+      li{
+        display: inline-block;
+        margin-left: 15px;
+
+        a:hover{
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .rd-navbar-panel, .rd-navbar-nav-wrap {
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    .rd-navbar-panel {
+      @include clearfix;
+      text-align: left;
+      min-width: 190px;
+      max-width: 200px;
+    }
+  }
+}
+
