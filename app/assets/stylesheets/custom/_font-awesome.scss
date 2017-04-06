@@ -3,12 +3,12 @@
 // --------------------------------------------------
 @font-face {
   font-family: 'FontAwesome';
-  src: url('#{$icon-font-path}#{$icon-font-awesome}.eot?v=4.5.0');
-  src: url('#{$icon-font-path}#{$icon-font-awesome}.eot?#iefix&v=4.5.0') format('embedded-opentype'),
-       url('#{$icon-font-path}#{$icon-font-awesome}.woff2?v=4.5.0') format('woff2'),
-       url('#{$icon-font-path}#{$icon-font-awesome}.woff?v=4.5.0') format('woff'),
-       url('#{$icon-font-path}#{$icon-font-awesome}.ttf?v=4.5.0') format('truetype'),
-       url('#{$icon-font-path}#{$icon-font-awesome}.svg?v=4.5.0##{$icon-font-awesome-id}') format('svg');
+  src: url(asset-path('fontawesome-webfont.eot'));
+  src: url(asset-path('fontawesome-webfont.eot#iefix')) format('embedded-opentype'),
+       url(asset-path('fontawesome-webfont.woff2')) format('woff2'),
+       url(asset-path('fontawesome-webfont.woff')) format('woff'),
+       url(asset-path('fontawesome-webfont.ttf')) format('truetype'),
+       url(asset-path('fontawesome-webfont.svg#{$icon-font-awesome-id}')) format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -2091,4 +2091,4 @@
     font-weight: 400;
     font-family: 'FontAwesome';
   }
-}  
+}

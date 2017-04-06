@@ -3,7 +3,16 @@
 
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'offset-top-70 text-md-left rd-mailform' }) do |f| %>
     <%= f.error_notification %>
-
+    <div class="cell-md-4">
+      <div class="mfInput">
+        <%= f.input :first_name, required: true, autofocus: true, placeholder: '* First-name', label: false %>
+      </div>
+    </div>
+    <div class="cell-md-4">
+      <div class="mfInput">
+        <%= f.input :last_name, required: true, autofocus: true, placeholder: 'Last-name', label: false %>
+      </div>
+    </div>
     <div class="cell-md-4">
       <div class="mfInput">
         <%= f.input :email, required: true, autofocus: true, placeholder: '* E-mail', label: false %>

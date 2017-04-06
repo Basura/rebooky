@@ -1,2 +1,329 @@
-
-<h1>Hello, world</h1>
+<section>
+  <!-- Swiper-->
+  <div data-dragable="false" data-height="100vh" data-min-height="560px" class="swiper-container swiper-slider">
+    <div class="swiper-wrapper">
+      <div data-slide-bg="<%= image_path 'slider-01.jpg' %>" class="swiper-slide">
+        <div class="swiper-slide-caption">
+          <div class="container"><span data-caption-animate="fadeIn" class="veil reveal-sm-inline-block icon icon-xl fl-continuous-house150"></span>
+            <h1 data-caption-animate="fadeInUp" data-caption-delay="300">Attractive home purchase offers</h1>
+            <div data-caption-animate="fadeInUp" data-caption-delay="600" class="row">
+              <div class="col-md-10 col-md-offset-1">
+                <p class="veil reveal-md-block big text-light">We deal with different kinds of properties. <br class='veil reveal-lg-block'> No matter what you need a house, an apartment or garage – you’ll find a good option on our site.<br class='veil reveal-lg-block'> Thousands of offers and the best prices are guaranteed. Start browsing now! </p>
+                <div class="elements-group-8"><a href="#" class="btn btn-lg btn-primary">learn more<span class="icon fa-long-arrow-right"></span></a><a href="<%= new_session_path('user') %>" class="btn btn-lg btn-default">registration<span class="icon fa-long-arrow-right"></span></a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-slide-bg="<%= image_path 'slider-02.jpg' %>" class="swiper-slide">
+        <div class="swiper-slide-caption">
+          <div class="container"><span data-caption-animate="fadeIn" class="veil reveal-sm-inline-block icon icon-xl fl-continuous-house150"></span>
+            <h1 data-caption-animate="fadeInUp" data-caption-delay="300">Attractive home purchase offers</h1>
+            <div data-caption-animate="fadeInUp" data-caption-delay="600" class="row">
+              <div class="col-md-10 col-md-offset-1">
+                <p class="veil reveal-md-block big text-light">We deal with different kinds of properties. <br class='veil reveal-lg-block'> No matter what you need a house, an apartment or garage – you’ll find a good option on our site.<br class='veil reveal-lg-block'> Thousands of offers and the best prices are guaranteed. Start browsing now! </p>
+                <div class="elements-group-8"><a href="#" class="btn btn-lg btn-primary">learn more<span class="icon fa-long-arrow-right"></span></a><a href="<%= new_session_path('user') %>" class="btn btn-lg btn-default">registration<span class="icon fa-long-arrow-right"></span></a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-slide-bg="<%= image_path 'slider-03.jpg' %>" class="swiper-slide">
+        <div class="swiper-slide-caption">
+          <div class="container"><span data-caption-animate="fadeIn" class="veil reveal-sm-inline-block icon icon-xl fl-continuous-house150"></span>
+            <h1 data-caption-animate="fadeInUp" data-caption-delay="300">Attractive home purchase offers</h1>
+            <div data-caption-animate="fadeInUp" data-caption-delay="600" class="row">
+              <div class="col-md-10 col-md-offset-1">
+                <p class="veil reveal-md-block big text-light">We deal with different kinds of properties. <br class='veil reveal-lg-block'> No matter what you need a house, an apartment or garage – you’ll find a good option on our site.<br class='veil reveal-lg-block'> Thousands of offers and the best prices are guaranteed. Start browsing now! </p>
+                <div class="elements-group-8"><a href="#" class="btn btn-lg btn-primary">learn more<span class="icon fa-long-arrow-right"></span></a><a href="<%= new_session_path('user') %>" class="btn btn-lg btn-default">registration<span class="icon fa-long-arrow-right"></span></a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Swiper Pagination-->
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+<!-- RD Parallax-->
+<section class="rd-parallax light-context">
+  <div data-speed="0.5" data-type="media" data-url="<%= image_path 'index-01.jpg' %>" class="rd-parallax-layer"></div>
+  <div data-speed="0" data-type="html" class="rd-parallax-layer">
+    <div class="shell section-85 section-xl-182">
+      <div class="range">
+        <div class="cell-md-3 cell-sm-6">
+          <div class="box box-hover">
+            <h4 class="heading-divider heading-divider-light">Mortgage</h4><span class="icon icon-lg icon-whitet fl-continuous-clock101"></span>
+            <p>A little as 5% deposit can be saved to receive your new mortgage. Using mortgage calculators is quick and easy.</p><a href="#" class="btn btn-primary">more</a>
+          </div>
+        </div>
+        <div class="cell-md-3 cell-sm-6 offset-top-50 offset-sm-top-0">
+          <div class="box box-hover">
+            <h4 class="heading-divider heading-divider-light">Rentals</h4><span class="icon icon-lg icon-whitet fl-continuous-key174"></span>
+            <p>We have good offers both for rent and purchase. So, every client will be satisfied with our services.</p><a href="#" class="btn btn-primary">more</a>
+          </div>
+        </div>
+        <div class="cell-md-3 cell-sm-6 offset-top-50 offset-md-top-0">
+          <div class="box box-hover">
+            <h4 class="heading-divider heading-divider-light">Office spaces</h4><span class="icon icon-lg icon-whitet fl-continuous-folder242"></span>
+            <p>No matter what you need a house, an apartment or office – you’ll find a good option on our site.</p><a href="#" class="btn btn-primary">more</a>
+          </div>
+        </div>
+        <div class="cell-md-3 cell-sm-6 offset-top-50 offset-md-top-0">
+          <div class="box box-hover">
+            <h4 class="heading-divider heading-divider-light">Loans</h4><span class="icon icon-lg icon-whitet fl-continuous-padlock45"></span>
+            <p>You will find plenty of variants that fit absolutely different requirements. Try out our service!</p><a href="#" class="btn btn-primary">more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section style="background-image: url(<%= image_path 'index-03.jpg' %>); background-size: cover;" class="light-context section-85">
+  <div class="shell text-sm-left">
+    <div class="range">
+      <div class="cell-md-6">
+        <blockquote class="quote unit unit-md-horizontal unit-sm-horizontal unit-lg-middle unit-md-middle unit-sm-middle unit-spacing-xs">
+          <div class="unit-left"><img alt="" width="130" height="130" src="<%= image_path 'index-18.jpg' %>"></div>
+          <div class="unit-body">
+            <h4>
+              <cite>Derek M.</cite>
+            </h4>
+            <p>
+              <q>Great organization!! You’ve rendered an invaluable <br class='veil reveal-lg-block'> service! Thank you very much!</q>
+            </p>
+          </div>
+        </blockquote>
+      </div>
+      <div class="cell-md-6 offset-top-50 offset-md-top-0">
+        <blockquote class="quote unit unit-md-horizontal unit-sm-horizontal unit-lg-middle unit-md-middle unit-sm-middle unit-spacing-xs">
+          <div class="unit-left"><img alt="" width="130" height="130" src="<%= image_path 'index-19.jpg' %>"></div>
+          <div class="unit-body">
+            <h4>
+              <cite>Rebecca S.</cite>
+            </h4>
+            <p>
+              <q>You always have a quick solution to any problem. What an excellent level of customer service! </q>
+            </p>
+          </div>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="light-context">
+  <div class="shell shell-fuild">
+    <div class="range range-condensed">
+      <div class="cell-lg-3 cell-sm-6 offset-top-0">
+        <div class="thumbnail"><img alt="" width="512" height="512" src="<%= image_path 'index-04.jpg' %>">
+          <div class="caption">
+            <div class="caption-inner"><span class="veil reveal-sm-inline-block icon icon fl-continuous-house150"></span>
+              <h5><a href="blog_single_post.html">Find a Home</a></h5>
+              <p>We can show you any home anytime that is convenient to you.</p>
+            </div>
+            <div class="auxiliary"></div>
+          </div>
+        </div>
+        <div class="thumbnail"><img alt="" width="512" height="644" src="<%= image_path 'index-05.jpg' %>">
+          <div class="caption">
+            <div class="caption-inner"><span class="veil reveal-sm-inline-block icon icon fl-continuous-house150"></span>
+              <h5><a href="blog_single_post.html">Find a Home</a></h5>
+              <p>We can show you any home anytime that is convenient to you.</p>
+            </div>
+            <div class="auxiliary"></div>
+          </div>
+        </div>
+      </div>
+      <div class="cell-lg-3 cell-sm-6 offset-top-0">
+        <div class="thumbnail"><img alt="" width="513" height="727" src="<%= image_path 'index-06.jpg' %>">
+          <div class="caption">
+            <div class="caption-inner"><span class="veil reveal-sm-inline-block icon icon fl-continuous-house150"></span>
+              <h5><a href="blog_single_post.html">Find a Home</a></h5>
+              <p>We can show you any home anytime that is convenient to you.</p>
+            </div>
+            <div class="auxiliary"></div>
+          </div>
+        </div>
+        <div class="thumbnail"><img alt="" width="513" height="512" src="<%= image_path 'index-07.jpg' %>">
+          <div class="caption">
+            <div class="caption-inner"><span class="veil reveal-sm-inline-block icon icon fl-continuous-house150"></span>
+              <h5><a href="blog_single_post.html">Find a Home</a></h5>
+              <p>We can show you any home anytime that is convenient to you.</p>
+            </div>
+            <div class="auxiliary"></div>
+          </div>
+        </div>
+      </div>
+      <div class="cell-lg-3 cell-sm-6 offset-top-0">
+        <div class="thumbnail"><img alt="" width="512" height="512" src="<%= image_path 'index-08.jpg' %>">
+          <div class="caption">
+            <div class="caption-inner"><span class="veil reveal-sm-inline-block icon icon fl-continuous-house150"></span>
+              <h5><a href="blog_single_post.html">Find a Home</a></h5>
+              <p>We can show you any home anytime that is convenient to you.</p>
+            </div>
+            <div class="auxiliary"></div>
+          </div>
+        </div>
+        <div class="thumbnail"><img alt="" width="512" height="327" src="<%= image_path 'index-09.jpg' %>">
+          <div class="caption">
+            <div class="caption-inner"><span class="veil reveal-sm-inline-block icon icon fl-continuous-house150"></span>
+              <h5><a href="blog_single_post.html">Find a Home</a></h5>
+              <p>We can show you any home anytime that is convenient to you.</p>
+            </div>
+            <div class="auxiliary"></div>
+          </div>
+        </div>
+        <div class="thumbnail"><img alt="" width="512" height="464" src="<%= image_path 'index-10.jpg' %>">
+          <div class="caption">
+            <div class="caption-inner"><span class="veil reveal-sm-inline-block icon icon fl-continuous-house150"></span>
+              <h5><a href="blog_single_post.html">Find a Home</a></h5>
+              <p>We can show you any home anytime that is convenient to you.</p>
+            </div>
+            <div class="auxiliary"></div>
+          </div>
+        </div>
+      </div>
+      <div class="cell-lg-3 cell-sm-6 offset-top-0">
+        <div class="thumbnail"><img alt="" width="513" height="349" src="<%= image_path 'index-11.jpg' %>">
+          <div class="caption">
+            <div class="caption-inner"><span class="veil reveal-sm-inline-block icon icon fl-continuous-house150"></span>
+              <h5><a href="blog_single_post.html">Find a Home</a></h5>
+              <p>We can show you any home anytime that is convenient to you.</p>
+            </div>
+            <div class="auxiliary"></div>
+          </div>
+        </div>
+        <div class="thumbnail"><img alt="" width="513" height="512" src="<%= image_path 'index-12.jpg' %>">
+          <div class="caption">
+            <div class="caption-inner"><span class="veil reveal-sm-inline-block icon icon fl-continuous-house150"></span>
+              <h5><a href="blog_single_post.html">Find a Home</a></h5>
+              <p>We can show you any home anytime that is convenient to you.</p>
+            </div>
+            <div class="auxiliary"></div>
+          </div>
+        </div>
+        <div class="thumbnail"><img alt="" width="513" height="349" src="<%= image_path 'index-13.jpg' %>">
+          <div class="caption">
+            <div class="caption-inner"><span class="veil reveal-sm-inline-block icon icon fl-continuous-house150"></span>
+              <h5><a href="blog_single_post.html">Find a Home</a></h5>
+              <p>We can show you any home anytime that is convenient to you.</p>
+            </div>
+            <div class="auxiliary"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section-85 section-lg-top-34 section-xl-bottom-164">
+  <div class="shell text-md-left">
+    <h4 class="heading-divider">Welcome</h4>
+    <div class="range">
+      <div class="cell-md-6"><img alt="" width="570" height="380" src="<%= image_path 'index-14.jpg' %>" class="center-block img-responsive">
+        <h6 class="text-medium"><a href="blog_single_post.html">Our company is your one stop solution for all needs</a></h6>
+        <p class="inset-md-right-14p">Welcome to the one of the world's best known company in the industry! We are committed to the highest quality, reliability, responsibility, continuous improvement and strive to build long-term relationships with our clients. We are focused on providing integrated solutions and services to customers around the world. Putting our clients’ interests first, we work hard to exceed your expectations.</p>
+      </div>
+      <div class="cell-md-6 offset-top-50 offset-md-top-0"><img alt="" width="570" height="380" src="<%= image_path 'index-15.jpg' %>" class="center-block img-responsive">
+        <h6 class="text-medium"><a href="blog_single_post.html">Thanks for visiting our website!</a></h6>
+        <p class="inset-md-right-14p">Buying a home is one of the largest investments you will ever make. Getting as much information and advice as you can is key to making the best possible decision. This will get you step closer to buying your dream home. Applying for your mortgage is now as simple as completing your online application form. It only takes a few minutes with the advantage of being able to apply 24 hours 7 days a week. Now as little as 5% deposit can be saved to receive your new mortgage. Using mortgage calculators is quick and easy and will give you an estimate on how much you will be able to borrow to buy your dream home.Client is our first priority and a great amount of positive testimonials can prove this.</p>
+      </div>
+    </div><a href="blog_single_post.html" class="btn btn-primary">More</a>
+  </div>
+</section>
+<!-- RD Parallax-->
+<section class="rd-parallax light-context text-sm-left">
+  <div data-speed="0.5" data-type="media" data-url="<%= image_path 'index-16.jpg' %>" class="rd-parallax-layer"></div>
+  <div data-speed="0" data-type="html" class="rd-parallax-layer">
+    <div class="shell section-85 section-xl-top-164 section-xl-bottom-182"><span class="icon icon fl-continuous-house150"></span>
+      <h1>Creative solutions. Proven expertise.</h1>
+      <p class="text-light big">Our success is driven by the highest quality customer service. <br class='veil reveal-lg-block'> We can meet the requirements even of the whimsical clients; there are no complex tasks for us! </p><a href="#" class="btn btn-lg btn-primary">learn more<span class="icon fa-long-arrow-right"></span></a>
+    </div>
+  </div>
+</section>
+<!-- RD Parallax-->
+<section class="rd-parallax light-context">
+  <div data-speed="0.8" data-type="media" data-url="<%= image_path 'index-17.jpg' %>" class="rd-parallax-layer"></div>
+  <div data-speed="0" data-type="html" class="rd-parallax-layer">
+    <div class="shell text-md-left section-85 section-xl-top-182 section-xl-bottom-164">
+      <div class="range">
+        <div class="cell-md-4 cell-sm-6">
+          <h4 class="heading-divider">Leadership</h4><img alt="" width="370" height="326" src="<%= image_path 'index-20.jpg' %>" class="center-block img-responsive offset-top-34 offset-md-top-50">
+          <h6>We are the leaders</h6>
+          <p>Our company can boast the reputation of the trusted partner known worldwide. We are proud of the uncompromising quality of services we provide. Placing customers’ needs first in everything we do, we continue to grow rapidly as the industry leader.</p><a href="blog_single_post.html" class="btn btn-primary">More</a>
+        </div>
+        <div class="cell-md-4 cell-sm-6 offset-top-80 offset-sm-top-0">
+          <h4 class="heading-divider">Research</h4><img alt="" width="370" height="326" src="<%= image_path 'index-21.jpg' %>" class="center-block img-responsive offset-top-34 offset-md-top-50">
+          <h6>Find an agent</h6>
+          <p>Our real estate agents are professional in everything they do. Just call to our office or contact the agent you like via email or his/her social profile. You will get all the consultation you need. The agent can come to your office or house if you prefer personal meeting. You can be sure that he/she will do everything to meet all your requirements.</p><a href="blog_single_post.html" class="btn btn-primary">More</a>
+        </div>
+        <div class="cell-md-4 cell-md-preffix-0 cell-sm-8 cell-sm-preffix-2 offset-top-80 offset-md-top-0">
+          <h4 class="heading-divider">Investment</h4><img alt="" width="370" height="326" src="<%= image_path 'index-22.jpg' %>" class="center-block img-responsive offset-top-34 offset-md-top-50">
+          <h6>Your future home tips</h6>
+          <p>Buying a home is one of the largest investments you will ever make. Getting as much information and advice as you can is key to making the best possible decision. This will get you step closer to buying your dream home. Applying for your mortgage is now as simple as completing your online application form.</p><a href="blog_single_post.html" class="btn btn-primary">More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- RD Google Map-->
+<section class="rd-google-map">
+  <div id="google-map" class="rd-google-map__model"></div>
+  <ul class="rd-google-map__locations">
+    <li data-x="-73.9874068" data-y="40.643180">
+      <p>9870 St Vincent Place, Glasgow, DC 45 Fr 45.<span>800 2345-6789</span></p>
+    </li>
+  </ul>
+</section>
+<footer style="background-image: url(<%= image_path 'footer-01.jpg' %>); background-size: cover;" class="page-footer light-context">
+  <section class="shell text-sm-left section-85 section-xl-bottom-164">
+    <div class="range">
+      <div class="cell-md-3 cell-sm-6">
+        <h4 class="heading-divider">Archives</h4>
+        <ul class="list small">
+          <li><a href="blog.html">May 2013</a></li>
+          <li><a href="blog.html">April 2013</a></li>
+          <li><a href="blog.html">March 2013</a></li>
+          <li><a href="blog.html">June 2013</a></li>
+          <li><a href="blog.html">July 2013</a></li>
+          <li><a href="blog.html">January 2013</a></li>
+          <li><a href="blog.html">December 2013</a></li>
+        </ul>
+      </div>
+      <div class="cell-md-3 cell-sm-6 offset-top-50 offset-sm-top-0">
+        <h4 class="heading-divider">Locations</h4>
+        <address class="text-light small">
+          <p>9870 St Vincent Place, <br>Glasgow, DC 45 Fr 45.</p>
+          <p>9863 - 9867 Mill Road, <br>Cambridge, MG09 99HT</p>
+          <p>8901 Marmora Road, <br>Glasgow, D04 89GR.</p>
+        </address>
+      </div>
+      <div class="cell-md-3 cell-sm-6 offset-top-50 offset-md-top-0">
+        <h4 class="heading-divider">Projects</h4><a href="blog_single_post.html" class="thumbnail-variant-3"><img alt="" width="270" height="81" src="<%= image_path 'footer-02.jpg' %>" class="img-responsive"></a><a href="blog_single_post.html" class="thumbnail-variant-3"><img alt="" width="270" height="81" src="<%= image_path 'footer-03.jpg' %>" class="img-responsive"></a>
+      </div>
+      <div class="cell-md-3 cell-sm-6 offset-top-50 offset-md-top-0">
+        <h4 class="heading-divider">Contacts</h4>
+        <h6><span class="reveal-block">Call toll-free</span><a href="callto:#" class="offset-top-10">+1 234 567 8900</a></h6>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="shell">
+      <div class="range range-md-middle">
+        <div class="cell-md-6 text-md-left cell-md-push-1">
+          <ul class="list-inline">
+            <li><a href="#" class="icon icon-sm icon-circle icon-white fa-facebook-square"></a></li>
+            <li><a href="#" class="icon icon-sm icon-circle icon-white fa-google-plus-square"></a></li>
+            <li><a href="#" class="icon icon-sm icon-circle icon-white fa-twitter"></a></li>
+            <li><a href="#" class="icon icon-sm icon-circle icon-white fa-pinterest"></a></li>
+            <li><a href="#" class="icon icon-sm icon-circle icon-white fa-linkedin-square"></a></li>
+            <li><a href="#" class="icon icon-sm icon-circle icon-white fa-instagram"></a></li>
+          </ul>
+        </div>
+        <div class="cell-md-6 text-md-left">
+          <p class="p extra-small text-uppercase">real estate © <span id='copyright-year'></span> • <a href='privacy.html'>Privacy Policy</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</footer>

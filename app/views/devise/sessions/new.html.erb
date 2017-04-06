@@ -1,9 +1,18 @@
+<% content_for :breadcrumbs do %>
+  <ol class="breadcrumb">
+    <li><a href="./">Home</a></li>
+    <li class="active">Login</li>
+  </ol>
+<% end %>
+
 <div class="shell login-form">
   <h4 class="offset-top-80 heading-divider text-left text-nowrap">Log in</h4>
 
   <%= simple_form_for(resource,
                       url: session_path(resource_name),
-                      html: { class: 'offset-top-70 text-md-left rd-mailform'} ) do |f| %>
+                      html: { class: 'offset-top-70 text-md-left rd-mailform', remote: false } ) do |f| %>
+    <%= devise_error_messages! %>
+
     <div class="cell-md-4">
       <div class="mfInput">
         <%= f.text_field :email, required: false, placeholder: 'E-mail', autofocus: true %>
