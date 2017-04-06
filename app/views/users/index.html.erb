@@ -1,0 +1,33 @@
+
+<div class="shell user-form">
+  <h4 class="offset-top-80 heading-divider text-left text-nowrap user-title-form">User Management</h4>
+
+  <table class="table table-bordered table-responsive index-user">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Email</th>
+        <th>Contact number</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each_with_index do |user, index| %>
+        <tr>
+          <td><%= index + 1 %></td>
+          <td><%= user.first_name %></td>
+          <td><%= user.last_name %></td>
+          <td><%= user.email %></td>
+          <td><%= user.contact_number %></td>
+          <td class="text-nowrap">
+            <%= link_to 'Modify', [:edit, user] %> |
+            <%= link_to 'Remove', user, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+

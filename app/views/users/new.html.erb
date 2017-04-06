@@ -1,0 +1,8 @@
+<div class="shell user-form">
+  <h4 class="offset-top-80 heading-divider text-left text-nowrap user-title-form">User Management</h4>
+
+  <%= simple_form_for @user do |f| %>
+    <%= render 'form', f: f %>
+    <%= f.button :button, class: "btn btn-primary" %>
+  <% end =%>
+</div>

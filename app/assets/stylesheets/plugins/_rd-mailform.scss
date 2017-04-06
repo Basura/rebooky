@@ -62,8 +62,12 @@ $placeholder-opacity: 1;
     font-weight: inherit;
   }
 
-  input, select {
+  input:not([type=checkbox]), select {
     height: $input-height;
+  }
+
+  [type=checkbox] {
+    height: 21px;
   }
 
   input, textarea {

@@ -1,7 +1,8 @@
 <div class="shell login-form">
   <h4 class="offset-top-80 heading-divider text-left text-nowrap">Log in</h4>
 
-  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'offset-top-70 text-md-left rd-mailform' }) do |f| %>
+  <%= simple_form_for(resource,
+                      html: { class: 'offset-top-70 text-md-left rd-mailform'} ) do |f| %>
     <div class="cell-md-4">
       <div class="mfInput">
         <%= f.text_field :email, required: false, placeholder: 'E-mail', autofocus: true %>
@@ -13,10 +14,10 @@
       </div>
     </div>
     <div class="cell-md-4">
-      <%= f.input :remember_me, item_wrapper_class: 'inline', as: :boolean, label: false, inline_label: true if devise_mapping.rememberable? %>
+      <%= f.input :remember_me, as: :boolean, label: "Remember me" %>
     </div>
 
-    <div class="form-actions">
+    <div class="form-actions col-sm-offset-4">
       <%= f.button :button, "Log in", class: "btn btn-primary" %>
     </div>
   <% end %>
