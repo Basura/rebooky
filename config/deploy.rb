@@ -1,14 +1,16 @@
-# config valid only for current version of Capistrano
-lock "3.8.0"
+# frozen_string_literal: true
 
-set :application, "rebookery"
-set :repo_url, "git@github.com:Basura/rebooky.git"
+# config valid only for current version of Capistrano
+lock '3.8.0'
+
+set :application, 'rebooky'
+set :repo_url, 'git@github.com:Basura/rebooky.git'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, "/home/deploy/rebookery"
+set :deploy_to, '/home/deploy/rebooky'
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
@@ -21,11 +23,14 @@ set :deploy_to, "/home/deploy/rebookery"
 set :pty, true
 
 # Default value for :linked_files is []
-append :linked_files, "config/database.yml", "config/application.yml", "db/production.sqlite3"
+append :linked_files, 'config/database.yml', 'config/application.yml',
+       'db/production.sqlite3'
 
 # Default value for linked_dirs is []
-# append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
-append :linked_dirs, "bin", "log" "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle", "public/system", "public/uploads"
+# append :linked_dirs, "log", "tmp/pids", "tmp/cache",
+#        "tmp/sockets", "public/system"
+append :linked_dirs, 'bin', 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets',
+       'vendor/bundle', 'public/system', 'public/uploads'
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
@@ -36,13 +41,13 @@ append :linked_dirs, "bin", "log" "tmp/pids", "tmp/cache", "tmp/sockets", "vendo
 set :rbenv_type, :user # or :system, depends on your rbenv setup
 set :rbenv_ruby, File.read('.ruby-version').strip
 set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
-set :rbenv_map_bins, %w{rake gem bundle ruby rails puma pumactl}
+set :rbenv_map_bins, %w(rake gem bundle ruby rails puma pumactl)
 set :rbenv_roles, :all # default value
 
 set :puma_rackup, -> { File.join(current_path, 'config.ru') }
 set :puma_state, "#{shared_path}/tmp/pids/puma.state"
 set :puma_pid, "#{shared_path}/tmp/pids/puma.pid"
-set :puma_bind, "unix://#{shared_path}/tmp/sockets/puma.sock"    #accept array for multi-bind
+set :puma_bind, "unix://#{shared_path}/tmp/sockets/puma.sock" # accept array for multi-bind
 set :puma_conf, "#{shared_path}/puma.rb"
 set :puma_access_log, "#{shared_path}/log/puma_error.log"
 set :puma_error_log, "#{shared_path}/log/puma_access.log"
@@ -56,7 +61,7 @@ set :puma_preload_app, true
 
 # Server name for nginx, space separated values
 # No default value
-set :nginx_domains, "rebookery.com"
+set :nginx_domains, 'rebooky.com'
 
 # Redirected domains, all these will have a permanent redirect to the first of :nginx_domains
 # No default value
@@ -77,7 +82,7 @@ set :nginx_domains, "rebookery.com"
 # Defaults to using the 'service' convinience script.
 # You might prefer using the init.d instead depending on sudo privilages.
 # default value: "service nginx"
-set :nginx_service_path, "/etc/init.d/nginx"
+set :nginx_service_path, '/etc/init.d/nginx'
 
 # Roles the deploy nginx site on,
 # default value: :web
