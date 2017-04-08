@@ -7,5 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.create_with(email: 'guilleva@gmail.com',
                  password: 'changeme!',
-                 password_confirmation: 'changeme!')
+                 password_confirmation: 'changeme!',
+                 first_name: 'Guillermo',
+                 last_name: 'Vargas',
+                 role: 'admin')
     .find_or_create_by(email: 'guilleva@gmail.com')

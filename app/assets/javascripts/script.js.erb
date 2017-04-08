@@ -68,8 +68,7 @@ var userAgent = navigator.userAgent.toLowerCase(),
 /**
  * Initialize All Scripts
  */
-$document.ready(function () {
-
+$document.on('turbolinks:load', function () {
   function getSwiperHeight(object, attr) {
     var val = object.attr("data-" + attr),
         dim;
@@ -254,67 +253,6 @@ $document.ready(function () {
     }
   }
 
-  /**
-   * @module       RD Validator
-   * @author       Aleksey Patsurkovskiy
-   * @version      1.0.0
-   * @license      MIT License
-   * @link         http://cms.devoffice.com/coding-demo/mnemon1k/rd-validation/demo/
-   */
-  if (plugins.mailForm.length) {
-    if ("RDValidator" in jQuery.fn) {
-
-      [].slice.call(plugins.mailForm).forEach(function (item) {
-        var $currentForm = $(item),
-            mailFormSettings = {
-              formType: $currentForm.data("form-type"),
-              resultPanelClass: $currentForm.data("result-class"),
-              msg: {
-                'MF000': 'Successfully sent!',
-                'MF001': 'Recipients are not set!',
-                'MF002': 'Form will not work locally!',
-                'MF003': 'Please, define email field in your form!',
-                'MF004': 'Please, define type of your form!',
-                'MF254': 'Something went wrong with PHPMailer!',
-                'MF255': 'Aw, snap! Something went wrong.'
-              }
-            },
-            resultPanel = $('.' + mailFormSettings.resultPanelClass),
-            mailFormOptions = {
-              data: {"form-type": mailFormSettings.formType},
-              error: function (result) {
-                resultPanel.text(mailFormSettings.msg[result]);
-              },
-              success: function (result) {
-                result = result.length == 5 ? result : 'MF255';
-                resultPanel.text(mailFormSettings.msg[result]);
-                if (result === "MF000") {
-                  resultPanel[0].classList.add("success");
-                  setTimeout(function () {
-                    resultPanel[0].classList.remove("success");
-                    $currentForm.clearForm();
-                  }, 2500);
-                } else {
-                  resultPanel[0].classList.add("error");
-                  setTimeout(function () {
-                    resultPanel[0].classList.remove("error");
-                  }, 4000);
-                }
-              }
-            };
-
-        $currentForm.RDValidator({
-          constraints: {
-            "@Time": {
-              rule: /^(1[012]|[1-9]):[0-5]\d\s[ap]\.?m\.?$/i,
-              message: 'Enter valid time format!'
-            }
-          }
-        });
-        $currentForm.ajaxForm(mailFormOptions);
-      });
-    }
-  }
 
   /**
    * @module       Text rotator

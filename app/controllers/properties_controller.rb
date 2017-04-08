@@ -1,16 +1,19 @@
+# frozen_string_literal: true
+
 class PropertiesController < ApplicationController
-  before_action :set_property, only: [:show, :edit, :update, :destroy]
+  after_action :verify_authorized, except: :index
+  after_action :verify_policy_scoped, only: :index
+  before_action :set_property, only: %i(show edit update destroy)
 
   # GET /properties
   # GET /properties.json
   def index
-    @properties = Property.all
+    @properties = policy_scope(Property)
   end
 
   # GET /properties/1
   # GET /properties/1.json
-  def show
-  end
+  def show; end
 
   # GET /properties/new
   def new
@@ -18,13 +21,13 @@ class PropertiesController < ApplicationController
   end
 
   # GET /properties/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /properties
   # POST /properties.json
   def create
-    @property = Property.new(property_params)
+    @property = current_user.properties.new(property_params)
+    authorize @property
 
     respond_to do |format|
       if @property.save
@@ -62,13 +65,15 @@ class PropertiesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_property
-      @property = Property.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def property_params
-      params.require(:property).permit(:user_id, :frequency)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_property
+    @property = Property.find(params[:id])
+    authorize @property
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def property_params
+    params.require(:property).permit(:name, :frequency)
+  end
 end

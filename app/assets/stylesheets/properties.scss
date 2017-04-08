@@ -1,3 +1,16 @@
-// Place all the styles related to the properties controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.table.index-property {
+  //width: 70%;
+  line-height: 0px;
+  margin-top: 40px;
+
+  td {
+    padding: 0 5px;
+    line-height: 30px;
+    text-align: left;
+  }
+}
+
+.property-form {
+  max-width: 400px;
+}

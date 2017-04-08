@@ -1,6 +1,16 @@
-<h1>Editing Property</h1>
+<% content_for :breadcrumbs do %>
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><%= link_to 'My Properties', properties_path %></li>
+    <li class="active"><%= @property.name %></li>
+  </ol>
+<% end %>
 
-<%= render 'form', property: @property %>
+<div class="shell property-form">
+  <h4 class="offset-top-80 heading-divider text-left text-nowrap">Edit Property</h4>
 
-<%= link_to 'Show', @property %> |
+  <%= render 'form', property: @property %>
+</div>
+
+
 <%= link_to 'Back', properties_path %>

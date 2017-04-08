@@ -1,15 +1,20 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
+  before_action :set_user, only: %i(show edit update destroy)
 
   def index
-     @users = User.all
+    @users = policy_scope(User.all)
   end
 
   def new
     @user = User.new
+    authorize @user
   end
 
   def create
     @user = User.new(user_params)
+    authorize @user
     if @user.save
       redirect_to :users, notice: 'User successfully created'
     else
@@ -17,12 +22,9 @@ class UsersController < ApplicationController
     end
   end
 
-  def edit
-    @user = User.find(params[:id])
-  end
+  def edit; end
 
   def update
-    @user = User.find(params[:id])
     if @user.update_attributes(user_params)
       redirect_to :users, notice: 'User successfully updated'
     else
@@ -31,16 +33,21 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:id])
     @user.destroy
     redirect_to :users, notice: 'User successfully destroy'
   end
 
   private
 
-    def user_params
-      params.require(:user).permit(:first_name, :last_name, :contact_number, :email, :password,
-                                   :password_confirmation)
+  def user_params
+    params.require(:user).permit(policy(User).permitted_attributes).tap do |p|
+      p[:password] = nil if p[:password] == ''
+      p[:password_confirmation] = nil if p[:password_confirmation] == ''
     end
+  end
 
+  def set_user
+    @user = User.find(params[:id])
+    authorize @user
+  end
 end

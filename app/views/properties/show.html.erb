@@ -1,8 +1,18 @@
+<% content_for :breadcrumbs do %>
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><%= link_to 'My Properties', properties_path %></li>
+    <li class="active"><%= @property.name %></li>
+  </ol>
+<% end %>
+
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>User:</strong>
-  <%= @property.user.full_name %>
+  <strong>Name:</strong>
+  <%= @property.name %>
+</p>
+
 </p>
 
 <p>

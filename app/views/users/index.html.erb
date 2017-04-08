@@ -1,5 +1,11 @@
+<% content_for :breadcrumbs do %>
+  <ol class="breadcrumb">
+    <li><a href="./">Home</a></li>
+    <li class="active">User Management</li>
+  </ol>
+<% end %>
 
-<div class="shell user-form">
+<div class="shell">
   <h4 class="offset-top-80 heading-divider text-left text-nowrap user-title-form">User Management</h4>
 
   <table class="table table-bordered table-responsive index-user">
@@ -29,5 +35,7 @@
       <% end %>
     </tbody>
   </table>
+
+  <%= link_to 'New User', new_user_path, class: 'btn btn-primary' if policy(User).create? %>
 </div>
 

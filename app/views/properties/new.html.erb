@@ -1,5 +1,15 @@
-<h1>New Property</h1>
+<% content_for :breadcrumbs do %>
+  <ol class="breadcrumb">
+    <li><a href="./">Home</a></li>
+    <li class="active">My Properties</li>
+  </ol>
+<% end %>
 
-<%= render 'form', property: @property %>
+<div class="shell property-form">
+  <h4 class="offset-top-80 heading-divider text-left text-nowrap user-title-form">New Property</h4>
+
+  <%= render 'form', property: @property %>
+</div>
+
 
 <%= link_to 'Back', properties_path %>
