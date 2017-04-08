@@ -68,7 +68,7 @@ var userAgent = navigator.userAgent.toLowerCase(),
 /**
  * Initialize All Scripts
  */
-$document.on('turbolinks:load', function () {
+$document.on('ready', function () {
   function getSwiperHeight(object, attr) {
     var val = object.attr("data-" + attr),
         dim;
