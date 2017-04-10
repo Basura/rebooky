@@ -18,6 +18,7 @@ class PropertiesController < ApplicationController
   # GET /properties/new
   def new
     @property = Property.new
+    authorize @property
   end
 
   # GET /properties/1/edit

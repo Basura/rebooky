@@ -21,6 +21,10 @@ class PropertyPolicy < ApplicationPolicy
     owner_or_admin?
   end
 
+  def create?
+    owner_or_admin?
+  end
+
   def owner_or_admin?
     record.user_id == user.id || user.admin?
   end
