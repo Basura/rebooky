@@ -12,3 +12,8 @@ User.create_with(email: 'guilleva@gmail.com',
                  last_name: 'Vargas',
                  role: 'admin')
     .find_or_create_by(email: 'guilleva@gmail.com')
+
+PeakSeason.find_or_create_by(name: 'Summer')
+PeakSeason.find_or_create_by(name: 'Spring')
+PeakSeason.find_or_create_by(name: 'Winter')
+PeakSeason.find_or_create_by(name: 'Autumn')

@@ -14,7 +14,7 @@ class User < ApplicationRecord
   has_many :properties, inverse_of: :user
 
   before_validation do
-    self.role ||= user
+    self.role ||= :user
   end
 
   def full_name

@@ -5,26 +5,40 @@
   </ol>
 <% end %>
 
-<div class="shell user-form">
+<div class="shell">
   <h4 class="offset-top-80 heading-divider text-left text-nowrap user-title-form">My Properties</h4>
 
   <table class="table table-bordered table-responsive index-property">
     <thead>
       <tr>
+        <th>#</th>
         <th>Name</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Home type</th>
+        <th>Bedrooms</th>
+        <th>Sleeps</th>
         <th>Frequency</th>
-        <th colspan="3"></th>
+        <th>Recreational types</th>
+        <th colspan="3" class="actions-header-columns">Actions</th>
       </tr>
     </thead>
 
     <tbody>
-      <% @properties.each do |property| %>
+      <% @properties.each_with_index do |property, index| %>
         <tr>
-          <td><%= property.name %></td>
+          <td><%= index + 1 %></td>
+          <td><%= property.title %></td>
+          <td><%= property.city %></td>
+          <td><%= property.state %></td>
+          <td><%= property.home_type %></td>
+          <td><%= property.bedrooms %></td>
+          <td><%= property.sleeps %></td>
           <td><%= property.frequency %></td>
+          <td><%= property.recreational_type %></td>
           <td><%= link_to 'Show', property %></td>
           <td><%= link_to 'Edit', edit_property_path(property) %></td>
-          <td><%= link_to 'Destroy', property, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Delete', property, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     </tbody>

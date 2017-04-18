@@ -2,23 +2,42 @@
   <ol class="breadcrumb">
     <li><a href="/">Home</a></li>
     <li><%= link_to 'My Properties', properties_path %></li>
-    <li class="active"><%= @property.name %></li>
+    <li class="active"><%= @property.title %></li>
   </ol>
 <% end %>
 
 <p id="notice"><%= notice %></p>
+<div class="shell property-form">
+  <dl class="dl-horizontal">
+    <dt>Title:</dt>
+    <dd><%= @property.title %></dd>
 
-<p>
-  <strong>Name:</strong>
-  <%= @property.name %>
-</p>
+    <dt>Description:</dt>
+    <dd><%= @property.description %></dd>
 
-</p>
+    <dt>City:</dt>
+    <dd><%= @property.city %></dd>
 
-<p>
-  <strong>Frequency:</strong>
-  <%= @property.frequency %>
-</p>
+    <dt>State:</dt>
+    <dd><%= @property.state %></dd>
 
+    <dt>Home type:</dt>
+    <dd><%= @property.home_type %></dd>
+
+    <dt>Bedrooms:</dt>
+    <dd><%= @property.bedrooms %></dd>
+
+    <dt>Frequency:</dt>
+    <dd><%= @property.frequency %></dd>
+
+    <dt>Peak Seasons:</dt>
+    <dd>
+      <% @property.peak_seasons.each do |peak_season| %>
+        <%= peak_season.name %>
+      <% end %>
+    </dd>
+  </dl>
+</div>
+</br>
 <%= link_to 'Edit', edit_property_path(@property) %> |
 <%= link_to 'Back', properties_path %>

@@ -10,15 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170408011513) do
+ActiveRecord::Schema.define(version: 20170418155030) do
+
+  create_table "peak_seasons", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "peak_seasons_properties", force: :cascade do |t|
+    t.integer "property_id"
+    t.integer "peak_season_id"
+    t.index ["peak_season_id"], name: "index_peak_seasons_properties_on_peak_season_id"
+    t.index ["property_id"], name: "index_peak_seasons_properties_on_property_id"
+  end
 
   create_table "properties", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "frequency"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "name"
-    t.index ["user_id"], name: "index_properties_on_user_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.string   "title"
+    t.text     "description"
+    t.string   "city"
+    t.string   "state"
+    t.integer  "bedrooms"
+    t.integer  "sleeps"
+    t.integer  "recreational_type"
+    t.integer  "home_type"
   end
 
   create_table "users", force: :cascade do |t|

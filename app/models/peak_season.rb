@@ -1,0 +1,2 @@
+class PeakSeason < ApplicationRecord
+end
