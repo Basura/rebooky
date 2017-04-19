@@ -28,7 +28,8 @@
               </ul>
             </li>
             <li><a href="blog.html">Blog</a></li>
-            <li><a href="contacts.html">Contacts</a></li>
+            <li><a href="<%= contacts_path %>">Contacts</a></li>
+            <li><a href="<%= properties_path %>">My properties</a></li>
             <% if user_signed_in? %>
             <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
             <% else %>
