@@ -32,6 +32,7 @@ require "capistrano/rbenv"
 require "capistrano/bundler"
 require "capistrano/rails/assets"
 require "capistrano/rails/migrations"
+require 'capistrano/rails/db'
 # require "capistrano/passenger"
 require 'capistrano/nginx'
 require 'capistrano/puma'
