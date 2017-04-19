@@ -16,4 +16,5 @@ class Property < ApplicationRecord
 
   belongs_to :user
   has_and_belongs_to_many :peak_seasons, inverse_of: :property
+  has_many :contacts, inverse_of: :property
 end

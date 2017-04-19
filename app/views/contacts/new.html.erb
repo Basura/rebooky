@@ -1,0 +1,15 @@
+<% content_for :breadcrumbs do %>
+  <ol class="breadcrumb">
+    <li><a href="./">Home</a></li>
+    <li class="active">Contacts</li>
+  </ol>
+<% end %>
+
+<div class="shell contact-form">
+  <h4 class="offset-top-80 heading-divider text-left text-nowrap user-title-form">New Contact</h4>
+
+  <%= render 'form', contact: @contact %>
+</div>
+
+
+<%= link_to 'Back', contacts_path %>

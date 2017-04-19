@@ -1,0 +1,33 @@
+<% content_for :breadcrumbs do %>
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><%= link_to 'Contacts', contacts_path %></li>
+    <li class="active"><%= @contact.full_name %></li>
+  </ol>
+<% end %>
+
+<p id="notice"><%= notice %></p>
+<div class="shell contact-form">
+  <dl class="dl-horizontal">
+    <dt>Fist name:</dt>
+    <dd><%= @contact.first_name %></dd>
+
+    <dt>Last name:</dt>
+    <dd><%= @contact.last_name %></dd>
+
+    <dt>Email:</dt>
+    <dd><%= @contact.email %></dd>
+
+    <dt>Phone number:</dt>
+    <dd><%= @contact.phone_number %></dd>
+
+    <dt>Address:</dt>
+    <dd><%= @contact.address %></dd>
+
+    <dt>Property:</dt>
+    <dd><%= Property.find(@contact.property_id).title %></dd>
+  </dl>
+</div>
+</br>
+<%= link_to 'Edit', edit_contact_path(@contact) %> |
+<%= link_to 'Back', contacts_path %>
