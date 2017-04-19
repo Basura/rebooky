@@ -17,7 +17,6 @@
         <th>Email</th>
         <th>Phone number</th>
         <th>Address</th>
-        <th>Property</th>
         <th colspan="3" class="actions-header-columns">Actions</th>
       </tr>
     </thead>
@@ -31,7 +30,6 @@
           <td><%= contact.email %></td>
           <td><%= contact.phone_number %></td>
           <td><%= contact.address %></td>
-          <td><%= Property.find(contact.property).title %></td>
           <td><%= link_to 'Show', contact %></td>
           <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
           <td><%= link_to 'Delete', contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
