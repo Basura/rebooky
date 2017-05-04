@@ -1,0 +1,24 @@
+// Place all the styles related to the inquiries controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.inquiry-show {
+    text-align: left;
+}
+
+.mail-body {
+    margin-top: 30px;
+    border-top: 1px solid #ccc;
+}
+
+.index-inquiry {
+  //width: 70%;
+  line-height: 0px;
+  margin-top: 40px;
+
+  td {
+    padding: 0 5px;
+    line-height: 30px;
+    text-align: left;
+  }
+}

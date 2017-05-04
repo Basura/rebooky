@@ -34,6 +34,7 @@ gem 'simple_form'
 gem 'devise'
 gem 'pundit'
 gem 'enum_help'
+gem 'sendgrid-ruby'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -43,6 +44,7 @@ gem 'enum_help'
 # gem 'capistrano-rails', group: :development
 
 gem 'figaro'
+gem 'kaminari'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -1,0 +1,34 @@
+<% content_for :breadcrumbs do %>
+  <ol class="breadcrumb">
+    <li><a href="./">Home</a></li>
+    <li class="active">Inquiries</li>
+  </ol>
+<% end %>
+
+<div class="shell">
+  <h4 class="offset-top-80 heading-divider text-left text-nowrap user-title-form">Inquiries</h4>
+
+  <table class="table table-bordered table-responsive index-inquiry">
+    <thead>
+      <tr>
+        <th>From</th>
+        <th>Date</th>
+        <th>Subject</th>
+        <th class="actions-header-columns">Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @inquiries.each_with_index do |inquiry, index| %>
+        <tr>
+          <td><%= inquiry.from.display_name %></td>
+          <td><%= l inquiry.created_at %></td>
+          <td><%= inquiry.subject %></td>
+          <td><%= link_to 'Show', inquiry %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= paginate @inquiries %>
+</div>

@@ -14,7 +14,18 @@ class Property < ApplicationRecord
   enum home_type: %i(condo chalet town-home house beach-house)
   enum recreational_type: { ski: 1, beach: 2, adventure: 3, hostel: 4, cabin: 5 }
 
+  before_save :generate_mail_handle, unless: :mail_handle
+
   belongs_to :user
   has_and_belongs_to_many :peak_seasons, inverse_of: :property
   has_many :bookings, inverse_of: :property
+
+  def sendgrid_email_address
+    return unless mail_handle && ENV['sendgrid_mail_domain']
+    mail_handle + '@' + ENV['sendgrid_mail_domain']
+  end
+
+  def generate_mail_handle
+    self.mail_handle = SecureRandom.hex(10)
+  end
 end

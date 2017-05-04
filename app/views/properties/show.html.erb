@@ -7,6 +7,7 @@
 <% end %>
 
 <p id="notice"><%= notice %></p>
+  <!-- Nav tabs -->
 <div class="shell property-form">
   <dl class="dl-horizontal">
     <dt>Title:</dt>
@@ -35,6 +36,11 @@
       <% @property.peak_seasons.each do |peak_season| %>
         <%= peak_season.name %>
       <% end %>
+    </dd>
+
+    <dt>E-mail address:</dt>
+    <dd>
+      <%= @property.sendgrid_email_address %>
     </dd>
   </dl>
 </div>
