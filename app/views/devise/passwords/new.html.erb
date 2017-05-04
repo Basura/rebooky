@@ -1,3 +1,10 @@
+<% content_for :breadcrumbs do %>
+  <ol class="breadcrumb">
+    <li><a href="./">Home</a></li>
+    <li class="active">Password Recovery</li>
+  </ol>
+<% end %>
+
 <div class="shell login-form">
   <h4 class="offset-top-80 heading-divider text-left text-nowrap password-title-form">Forgot your password?</h4>
 
@@ -11,7 +18,7 @@
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, "Send me reset password instructions", class:  "btn btn-primary" %>
+      <%= f.button :button, "Send me reset password instructions", class:  "btn btn-primary" %>
     </div>
   <% end %>
 

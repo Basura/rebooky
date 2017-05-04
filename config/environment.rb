@@ -12,7 +12,7 @@ if ENV['sendgrid_smtp_password']
     password: ENV['sendgrid_smtp_password'],
     domain: 'rebooky.com',
     address: 'smtp.sendgrid.net',
-    port: 465,
+    port: 587,
     authentication: :plain,
     enable_starttls_auto: true
   }
