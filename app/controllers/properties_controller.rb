@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class PropertiesController < ApplicationController
+  before_action :authenticate_user!
   after_action :verify_authorized, except: :index
   after_action :verify_policy_scoped, only: :index
   before_action :set_property, only: %i(show edit update destroy)
