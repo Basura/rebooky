@@ -13,6 +13,7 @@
       <tr>
         <th>From</th>
         <th>Date</th>
+        <th>Property</th>
         <th>Subject</th>
         <th class="actions-header-columns">Actions</th>
       </tr>
@@ -23,6 +24,7 @@
         <tr>
           <td><%= inquiry.from.display_name %></td>
           <td><%= l inquiry.created_at %></td>
+          <td><%= link_to inquiry.property.title, inquiry.property %></td>
           <td><%= inquiry.subject %></td>
           <td><%= link_to 'Show', inquiry %></td>
         </tr>

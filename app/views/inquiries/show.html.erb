@@ -10,6 +10,8 @@
   <!-- Nav tabs -->
 <div class="shell inquiry-show">
   <dl class="dl-horizontal">
+    <dt>Property:</dt>
+    <dd><%= link_to @inquiry.subject, @inquiry.property.title %></dd>
 
     <dt>Subject:</dt>
     <dd><%= @inquiry.subject %></dd>
