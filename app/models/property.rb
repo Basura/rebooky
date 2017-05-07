@@ -9,6 +9,7 @@ class Property < ApplicationRecord
   validates :bedrooms, presence: true
   validates :sleeps, presence: true
   validates :home_type, presence: true
+  validates :mail_handle, presence: true, uniqueness: true
 
   enum frequency: %i(weekly quarterly seasonal annual)
   enum home_type: %i(condo chalet town-home house beach-house)
