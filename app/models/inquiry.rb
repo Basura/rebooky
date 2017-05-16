@@ -22,12 +22,22 @@ class Inquiry < ApplicationRecord
   end
 
   def valid_to_address?
-    return if Property.where(mail_handle: to.local).exist?
+    return if User.where(mail_handle: to.local).exist?
     errors.add :to, 'is not a registered email address'
   end
 
   def find_property
-    self.property = Property.find_by(mail_handle: to.local)
+    vrbo_id = subject.gsub(/.*#([0-9]+)/, '\1')
+    user = find_user
+    return unless user.present?
+    self.property = Property.joins(:property_externals)
+                            .find_by(property_externals: {
+                                       external_id: vrbo_id, entity: :vrbo
+                                     })
+  end
+
+  def find_user
+    User.find_by(mail_handle: to.local)
   end
 
   def find_contact

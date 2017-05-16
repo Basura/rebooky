@@ -12,6 +12,10 @@
     <%= f.input :frequency %>
     <%= f.input :recreational_type %>
     <%= f.association :peak_seasons, as: :check_boxes, input_html: { multiple: true } %>
+    <%= f.fields_for :property_externals, f.object.property_externals.vrbo.first_or_initialize do |ef| %>
+      <%= ef.hidden_field :entity %>
+      <%= ef.input :external_id, label: 'VRBO.com ID' %>
+    <% end %>
   </div>
 
   <div class="form-actions">

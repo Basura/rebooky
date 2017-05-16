@@ -9,24 +9,15 @@ class Property < ApplicationRecord
   validates :bedrooms, presence: true
   validates :sleeps, presence: true
   validates :home_type, presence: true
-  validates :mail_handle, presence: true, uniqueness: true
 
   enum frequency: %i(weekly quarterly seasonal annual)
   enum home_type: %i(condo chalet town-home house beach-house)
   enum recreational_type: { ski: 1, beach: 2, adventure: 3, hostel: 4, cabin: 5 }
 
-  before_save :generate_mail_handle, unless: :mail_handle
-
   belongs_to :user
   has_and_belongs_to_many :peak_seasons, inverse_of: :property
   has_many :bookings, inverse_of: :property
+  has_many :property_externals, inverse_of: :property
 
-  def sendgrid_email_address
-    return unless mail_handle && ENV['sendgrid_mail_domain']
-    mail_handle + '@' + ENV['sendgrid_mail_domain']
-  end
-
-  def generate_mail_handle
-    self.mail_handle = SecureRandom.hex(10)
-  end
+  accepts_nested_attributes_for :property_externals
 end

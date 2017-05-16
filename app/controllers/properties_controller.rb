@@ -74,10 +74,14 @@ class PropertiesController < ApplicationController
     authorize @property
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
+  # Never trust parameters from the scary internet,
+  # only allow the white list through.
   def property_params
-    params.require(:property).permit(:title, :description, :city, :state, :home_type,
-                                     :bedrooms, :sleeps, :recreational_type, :frequency,
-                                     peak_season_ids: [])
+    params.require(:property).permit(
+      :title, :description, :city, :state, :home_type,
+      :bedrooms, :sleeps, :recreational_type, :frequency,
+      peak_season_ids: [],
+      property_externals_attributes: %i(id external_id entity)
+    )
   end
 end
