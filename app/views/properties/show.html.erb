@@ -37,6 +37,11 @@
         <%= peak_season.name %>
       <% end %>
     </dd>
+
+    <dt>VRBO ID</dt>
+    <dd>
+      <%= @property.property_externals.vrbo.pluck(:external_id).join(', ') %>
+    </dd>
   </dl>
 </div>
 </br>

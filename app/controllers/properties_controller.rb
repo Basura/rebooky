@@ -6,6 +6,8 @@ class PropertiesController < ApplicationController
   after_action :verify_policy_scoped, only: :index
   before_action :set_property, only: %i(show edit update destroy)
 
+  before_action :load_vrbo_association, only: %i(new edit)
+
   # GET /properties
   # GET /properties.json
   def index
@@ -18,7 +20,6 @@ class PropertiesController < ApplicationController
 
   # GET /properties/new
   def new
-    @property = Property.new
     authorize @property
   end
 
@@ -83,5 +84,10 @@ class PropertiesController < ApplicationController
       peak_season_ids: [],
       property_externals_attributes: %i(id external_id entity)
     )
+  end
+
+  def load_vrbo_association
+    @property ||= Property.new
+    @property.property_externals.vrbo.first_or_initialize
   end
 end

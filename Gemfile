@@ -1,12 +1,13 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 
 ruby '2.3.3'
 
 git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
   "https://github.com/#{repo_name}.git"
 end
-
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.2'
@@ -28,13 +29,13 @@ gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.5'
 gem 'bootstrap-sass', '~> 3.3.6'
-gem 'simple_form'
 gem 'devise'
-gem 'pundit'
 gem 'enum_help'
+gem 'jbuilder', '~> 2.5'
+gem 'pundit'
 gem 'sendgrid-ruby'
+gem 'simple_form'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -53,21 +54,22 @@ end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.0.5'
+  gem 'web-console', '>= 3.3.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'rubocop'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'rubocop'
 
   gem 'capistrano', require: false
-  gem 'capistrano3-puma', require: false
-  gem 'capistrano-rails', require: false
   gem 'capistrano-bundler', require: false
+  gem 'capistrano-rails', require: false
+  gem 'capistrano-rails-db', require: false
   gem 'capistrano-rbenv', require: false
   gem 'capistrano3-nginx', '~> 2.0', require: false
-  gem 'capistrano-rails-db', require: false
+  gem 'capistrano3-puma', require: false
+  gem 'mailcatcher', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i(mingw mswin x64_mingw jruby)
