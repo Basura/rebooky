@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'mail'
+
 class Inquiry < ApplicationRecord
   belongs_to :contact, autosave: true
   belongs_to :property

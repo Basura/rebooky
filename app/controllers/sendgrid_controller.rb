@@ -10,7 +10,7 @@ class SendgridController < ApplicationController
     end
   ensure
     # Forward the inquiry even if it wasn't properly saved
-    InquiryMailer.forward(inquiry).deliver_now if inquiry.property.present?
+    InquiryMailer.forward(inquiry).deliver_now if inquiry.find_user
   end
 
   private
