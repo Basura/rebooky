@@ -6,7 +6,7 @@ class SendgridController < ApplicationController
     if inquiry.save
       render plain: 'Sucess!!'
     else
-      render plain: inquiry.errors.full_messages.join(', '), status: 422
+      render plain: inquiry.errors.full_messages.join(', ')
     end
   ensure
     # Forward the inquiry even if it wasn't properly saved
