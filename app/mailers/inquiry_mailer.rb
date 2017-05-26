@@ -3,6 +3,6 @@ class InquiryMailer < ApplicationMailer
     @user = inquiry.find_user
     @inquiry = inquiry
 
-    mail(to: @user.email, from: inquiry.from, subject: inquiry.subject)
+    mail(to: @user.email, from: @user.sendgrid_email_address, subject: inquiry.subject)
   end
 end
